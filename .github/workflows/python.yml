@@ -1,0 +1,16 @@
+name: Run Python Script
+
+on: [push] # Triggers the workflow on every push to the repository
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Specifies the runner environment
+
+    steps:
+    - uses: actions/checkout@v4 # Checks out the repository code
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9' # Specifies the Python version (e.g., '3.9', '3.10')
+    - name: Run Python script
+      run: python my_script.py # Executes your Python script
