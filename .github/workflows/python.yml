@@ -5,6 +5,7 @@ on: [push] # Triggers the workflow on every push to the repository
 jobs:
   build:
     runs-on: ubuntu-latest # Specifies the runner environment
+    environment: 
 
     steps:
     - uses: actions/checkout@v4 # Checks out the repository code
@@ -16,4 +17,5 @@ jobs:
     - name: Run Python script
       env:
         SUPER_SECRET: ${{ secrets.SECRET1 }}
-      run: python my_script.py $SUPER_SECRET ${{ github.repository }} # Executes your Python script
+        SECRET: ${{ secrets.SECRET_ENV }}
+      run: python my_script.py $SUPER_SECRET ${{ github.repository }} $SECRET # Executes your Python script
