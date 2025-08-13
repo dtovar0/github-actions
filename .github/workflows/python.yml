@@ -15,4 +15,4 @@ jobs:
     - name: Run Python script
       env: 
         SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
-      run: python my_script.py "%SECRET_PASSPHRASE%" # Executes your Python script
+      run: python my_script.py "$SECRET_PASSPHRASE" # Executes your Python script
