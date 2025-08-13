@@ -5,7 +5,7 @@ on: [push] # Triggers the workflow on every push to the repository
 jobs:
   build:
     runs-on: ubuntu-latest # Specifies the runner environment
-    environment: 
+    environment: production
 
     steps:
     - uses: actions/checkout@v4 # Checks out the repository code
