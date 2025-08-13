@@ -16,6 +16,6 @@ jobs:
 
     - name: Run Python script
       env:
-        SUPER_SECRET: ${{ secrets.SECRET1 }}
         SECRET: ${{ secrets.SECRET_ENV }}
+        SUPER_SECRET: ${{ secrets.SECRET1 }}
       run: python my_script.py $SUPER_SECRET ${{ github.repository }} $SECRET # Executes your Python script
