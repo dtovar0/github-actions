@@ -14,4 +14,6 @@ jobs:
         python-version: '3.9' # Specifies the Python version (e.g., '3.9', '3.10')
 
     - name: Run Python script
-      run: python my_script.py ${{ secrets.SECRET_PASSPHRASE }} ${{ github.repository }} # Executes your Python script
+      env:
+        SUPER_SECRET: ${{ secrets.SECRET_PASSPHRASE }}
+      run: python my_script.py $SUPER_SECRET ${{ github.repository }} # Executes your Python script
