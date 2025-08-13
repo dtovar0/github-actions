@@ -13,7 +13,6 @@ jobs:
       with:
         python-version: '3.9' # Specifies the Python version (e.g., '3.9', '3.10')
     - name: Run Python script
-      run: python my_script.py SECRET_PASSPHRASE # Executes your Python script
       env: 
         SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
-  
+      run: python my_script.py SECRET_PASSPHRASE # Executes your Python script
