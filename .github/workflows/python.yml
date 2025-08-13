@@ -12,9 +12,9 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.9' # Specifies the Python version (e.g., '3.9', '3.10')
-        SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
+        SECRET_PASSPHRASE: ${{ SECRET_PASSPHRASE.SECRET_PASSPHRASE }}
 
     - name: Run Python script
       env: # Or as an environment variable
-        SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
+        SECRET_PASSPHRASE: ${{ SECRET_PASSPHRASE.SECRET_PASSPHRASE }}
       run: python my_script.py "$SECRET_PASSPHRASE" # Executes your Python script
